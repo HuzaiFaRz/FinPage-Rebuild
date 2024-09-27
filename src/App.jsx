@@ -5,11 +5,7 @@ import Navbar from "./Navbar";
 function App() {
   return (
     <Fragment>
-      <main
-        className="bg-[url('.\assets\Main_Bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll 
-      
-      w-full h-screen font-dmsans"
-      >
+      <main className="bg-Main_Bg bg-cover bg-center bg-no-repeat bg-scroll w-full h-screen saturate-100 font-dmsans">
         <Navbar />
       </main>
     </Fragment>
