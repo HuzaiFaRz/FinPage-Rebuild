@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <Fragment>
-      <nav className="Navbar w-full h-32 flex row justify-between items-center px-16 font-dmsans">
+      <nav className="Navbar w-full h-32 flex row justify-between items-center px-16 font-dmsans relative">
         {/* Navbar Start */}
 
         <div className="Navbar_Start_Content">
@@ -25,7 +25,7 @@ function Navbar() {
 
         {/* Navbar Center */}
 
-        <div className="Navbar_Center_Content">
+        <div className="Navbar_Center_Content fixed left-1/2 -translate-x-1/2">
           <ul className="Navbar_Links_Ul flex row justify-center items-center gap-5 bg-[#ffffff33] backdrop-blur-xl rounded-3xl border border-[#ffffff33] py-2 px-12">
             {navbarLinkArray.map((element, index) => (
               <li
