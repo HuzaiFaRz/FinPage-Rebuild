@@ -5,7 +5,7 @@ import Navbar_Arrow from "./assets/Navbar_Arrow.svg";
 
 function Navbar() {
   const navbarLinkArray = [
-    "OverView",
+    "Overview",
     "Features",
     "Testimonial",
     "FAQ",
