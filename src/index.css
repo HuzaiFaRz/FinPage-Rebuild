@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "DMSans";
+    src: url(fonts/DMSans-Font.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Sora";
+    src: url(fonts/Sora-Font.ttf) format("truetype");
+  }
+}
