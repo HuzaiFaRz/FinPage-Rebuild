@@ -8,7 +8,7 @@ import Paragraph from "./Paragraph";
 function App() {
   return (
     <Fragment>
-      <main className="main z-10 bg-Main_Bg bg-[url('./src/assets/Main_Bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll w-full h-screen font-dmsans">
+      <main className="main z-10 bg-[url('./assets/Main_Bg.webp')] bg-cover bg-center bg-no-repeat bg-scroll w-full h-screen font-dmsans">
         <div className="main_overlay w-full h-screen bg-[#0000004d] flex flex-col items-center justify-between">
           <Navbar />
           <div className="main_page w-full flex flex-col items-start justify-center gap-8 h-max  pb-60 px-16">
