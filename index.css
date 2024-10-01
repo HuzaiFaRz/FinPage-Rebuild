@@ -5,10 +5,10 @@
 @layer base {
   @font-face {
     font-family: "DMSans";
-    src: url(fonts/DMSans-Font.ttf) format("truetype");
+    src: url(src/assets/Fonts/DMSans-Font.ttf) format("truetype");
   }
   @font-face {
     font-family: "Sora";
-    src: url(fonts/Sora-Font.ttf) format("truetype");
+    src: url(src/assets/Fonts/Sora-Font.ttf) format("truetype");
   }
 }

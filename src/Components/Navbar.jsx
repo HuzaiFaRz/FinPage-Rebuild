@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 
-import Navbar_Logo from "./assets/Navbar_Logo.svg";
-import Navbar_Arrow from "./assets/Navbar_Arrow.svg";
+import Navbar_Logo from "../assets/Images/Navbar_Logo.svg";
+import Navbar_Arrow from "../assets/Images/Navbar_Arrow.svg";
 
 const linksArray = ["Overview", "Features", "Testimonial", "FAQ", "Downlaod"];
 
@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <Fragment>
-      <nav className="Navbar w-full h-24 z-30 lg:h-28 bg-[#000] lg:bg-transparent flex row justify-between items-center px-6 xl:px-14 font-dmsans cursor-pointer fixed lg:relative">
+      <nav className="Navbar w-full h-24 z-30 lg:h-28 bg-[#000] lg:bg-[#0000004d] flex row justify-between items-center px-6 xl:px-14 font-dmsans cursor-pointer fixed lg:relative">
         {/* Navbar Start */}
 
         <div className="Navbar_Start_Content">
@@ -78,29 +78,31 @@ function Navbar() {
           </a>
 
           <div
-            className="w-[60px] h-[45px] scale-75 sm:scale-90 md:scale-100 lg:scale-0 mt-[15px] sm:mt-[30px] relative mx-auto transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
+            className="w-[4rem] h-[4rem] flex flex-col justify-center items-center"
             onClick={(e) => {
               e.target.classList.toggle("open");
               NavbrOpenFunctionility();
             }}
           >
-            <span
-              className={`${`origin-left block absolute h-[3px] bg-[#fff] rounded-[9px] opacity-100 transition-all ease-in-out duration-300`}
+            <div className="w-full h-full scale-75 sm:scale-90 lg:scale-0 relative mt-5 md:mt-6 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden">
+              <span
+                className={`${`origin-left block absolute h-[3px] bg-[#fff] rounded-[9px] opacity-100 transition-all ease-in-out duration-300`}
 ${
   navbarOpen
     ? "transform rotate-45 top-[-3px] left-[8px] w-full"
     : "transform rotate-0  top-0 right-0 w-2/4"
 }`}
-            ></span>
+              ></span>
 
-            <span
-              className={`${`origin-left block absolute  bg-[#fff] h-[3px] w-full rounded-[9px] opacity-100 left-0 transition-all ease-in-out duration-300`}
+              <span
+                className={`${`origin-left block absolute  bg-[#fff] h-[3px] w-full rounded-[9px] opacity-100 left-0 transition-all ease-in-out duration-300`}
 ${
   navbarOpen
     ? "transform -rotate-45 top-[39px] left-[8px]"
     : "transform rotate-0 top-[15px] left-0"
 }`}
-            ></span>
+              ></span>
+            </div>
           </div>
         </div>
       </nav>
