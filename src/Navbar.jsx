@@ -78,7 +78,7 @@ function Navbar() {
           </a>
 
           <div
-            className="w-[60px] h-[45px] relative mt-[30px] mx-auto transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
+            className="w-[60px] h-[45px] scale-75 sm:scale-90 md:scale-100 lg:scale-0 mt-[15px] sm:mt-[30px] relative mx-auto transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
             onClick={(e) => {
               e.target.classList.toggle("open");
               NavbrOpenFunctionility();
@@ -88,13 +88,13 @@ function Navbar() {
               className={`${`origin-left block absolute h-[3px] bg-[#fff] rounded-[9px] opacity-100 transition-all ease-in-out duration-300`}
 ${
   navbarOpen
-    ? "transform rotate-45 top-[-3px] left-[8px] w-[60px]"
-    : "transform rotate-0  top-0 right-0 w-[35px]"
+    ? "transform rotate-45 top-[-3px] left-[8px] w-full"
+    : "transform rotate-0  top-0 right-0 w-2/4"
 }`}
             ></span>
 
             <span
-              className={`${`origin-left block absolute h-[3px] bg-[#fff] w-full rounded-[9px] opacity-100 left-0 transition-all ease-in-out duration-300`}
+              className={`${`origin-left block absolute  bg-[#fff] h-[3px] w-full rounded-[9px] opacity-100 left-0 transition-all ease-in-out duration-300`}
 ${
   navbarOpen
     ? "transform -rotate-45 top-[39px] left-[8px]"
