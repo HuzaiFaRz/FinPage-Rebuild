@@ -10,7 +10,7 @@ import Paragraph from "./Paragraph";
 function PageTwoContent() {
   return (
     <Fragment>
-      <div className="page-2 w-full h-[1334px] lg:h-[1076px] flex flex-col-reverse lg:flex-row justify-center items-center bg-[#000] overflow-hidden">
+      <div className="page-2 w-full h-[1400px] lg:h-[1076px] flex flex-col-reverse lg:flex-row justify-center items-start lg:items-center bg-[#000] overflow-hidden">
         <div className="w-full lg:w-[50%] flex flex-col items-start justify-center gap-8 py-12 px-8 xl:px-16">
           <img
             src={Page_Two_Icon}
