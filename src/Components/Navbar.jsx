@@ -24,14 +24,14 @@ function Navbar() {
           <a href="/">
             <img
               src={Navbar_Logo}
-              className="Navbar_Logo w-28 md:w-36 lg:w-40"
+              className="Navbar_Logo w-36 md:w-40 lg:w-full"
             />
           </a>
         </div>
 
         {/* Navbar Center */}
 
-        <div className="Navbar_Center_Content h-full">
+        <div className="Navbar_Center_Content w-full lg:w-auto h-full">
           <ul
             style={{ transition: "all 0.3s ease-in-out" }}
             className={`${navbarDefaultClass} ${
@@ -68,11 +68,8 @@ function Navbar() {
 
         {/* Navbar End */}
 
-        <div className="Navbar_End_Content">
-          <a
-            href="#"
-            className="hidden flex-row justify-center items-center gap-2 px-2 py-2 relative lg:flex"
-          >
+        <div className="Navbar_End_Content flex flex-row items-center justify-end">
+          <a href="#" className="hidden lg:flex absolute">
             <h5 className="text-white text-base">Buy Template</h5>
             <img src={Navbar_Arrow} className="Navbar_Arrow" />
           </a>
@@ -84,7 +81,7 @@ function Navbar() {
               NavbrOpenFunctionility();
             }}
           >
-            <div className="w-full h-full scale-75 sm:scale-90 lg:scale-0 relative mt-5 md:mt-6 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden">
+            <div className="w-full h-full scale-50 sm:scale-75 lg:scale-0 relative mt-4 md:mt-5 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden">
               <span
                 className={`${`origin-left block absolute h-[3px] bg-[#fff] rounded-[9px] opacity-100 transition-all ease-in-out duration-300`}
 ${

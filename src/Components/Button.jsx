@@ -5,7 +5,7 @@ function Button({ text, href }) {
     <a
       href={href}
       type="button"
-      className="px-8 py-4 mt-10 text-lg font-semibold transition text-white bg-[#ffffff33] backdrop-blur-xl rounded-3xl border border-[#ffffff33] hover:bg-[#fff] hover:text-[#000]"
+      className="px-8 py-4 mt-10 font-dmsans text-lg font-semibold transition text-white bg-[#ffffff33] backdrop-blur-xl rounded-3xl border border-[#ffffff33] hover:bg-[#fff] hover:text-[#000]"
     >
       {text}
     </a>
