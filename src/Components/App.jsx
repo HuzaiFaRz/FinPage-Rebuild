@@ -5,9 +5,9 @@ import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import Button from "./Button";
 import PageContent from "./PageContent";
-
 import SpecialCard from "./SpecialCard";
 import SpecialHeading from "./SpecialHeading";
+import CommentsCards from "./CommentsCards";
 
 import Page_One_Image from "../assets/Images/Page_One_Image.webp";
 import Page_One_Icon from "../assets/Images/Page_One_Icon.svg";
@@ -17,7 +17,9 @@ import Page_Two_Icon from "../assets/Images/Page_Two_Icon.svg";
 
 import Page_Three_Image from "../assets/Images/Page_Three_Image.webp";
 import Page_Three_Icon from "../assets/Images/Page_Three_Icon.svg";
-import CommentsCards from "./CommentsCards";
+
+import Faqs_Icon from "../assets/Images/Faqs_Icon.svg";
+import FAQsItems from "./FAQsItems";
 
 function App() {
   return (
@@ -80,6 +82,17 @@ function App() {
               <CommentsCards />
               <div className="absolute z-10 right-0 top-0 bottom-0 w-24 h-full bg-gradient-to-l from-black to-transparent"></div>
             </div>
+          </div>
+        </div>
+
+        <div className="page_four w-full h-full flex flex-col justify-center items-center text-center py-20 bg-[#000]">
+          <img
+            src={Faqs_Icon}
+            className="object-center object-cover w-[60px] h-[60px]"
+          />
+          <Heading text="FAQs" />
+          <div className="flex flex-col justify-center items-center gap-5 w-full py-5 px-10">
+            <FAQsItems />
           </div>
         </div>
       </main>

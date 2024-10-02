@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 
 import Navbar_Logo from "../assets/Images/Navbar_Logo.svg";
 import Navbar_Arrow from "../assets/Images/Navbar_Arrow.svg";
@@ -6,7 +6,7 @@ import Navbar_Arrow from "../assets/Images/Navbar_Arrow.svg";
 const linksArray = ["Overview", "Features", "Testimonial", "FAQ", "Downlaod"];
 
 function Navbar() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
 
   const NavbrOpenFunctionility = () => {
     setNavbarOpen(!navbarOpen);
