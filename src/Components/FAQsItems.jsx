@@ -81,11 +81,11 @@ function FAQsItems() {
                 </div>
               </div>
               <p
-                className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8  w-[90%] overflow-y-scroll
+                className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%]
                 ${
                   faqsDetailOpen
-                    ? "opacity-1 h-[200px] sm:h-[150px]"
-                    : "opacity-0 h-0 sm:h-[0]"
+                    ? "opacity-1 h-[200px] sm:h-[150px] overflow-y-scroll sm:overflow-hidden"
+                    : "opacity-0 h-0 sm:h-[0] overflow-y-hidden sm:overflow-hidden"
                 }`}
               >
                 {element.detail}
