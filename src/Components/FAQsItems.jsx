@@ -40,7 +40,7 @@ function FAQsItems() {
     <Fragment>
       {faqsItemsContent.map((element, index) => {
         return (
-          <>
+          <Fragment key={index}>
             <div
               className="Faqs-Item w-full lg:w-[850px] cursor-pointer flex flex-col justify-center items-start py-8 border border-[#000] border-b-[#ffffff33]"
               key={index}
@@ -91,7 +91,7 @@ function FAQsItems() {
                 {element.detail}
               </p>
             </div>
-          </>
+          </Fragment>
         );
       })}
     </Fragment>

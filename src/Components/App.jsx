@@ -41,7 +41,6 @@ const lenis = new Lenis({
 
 lenis.on("scroll", (e) => {
   const { _isStopped } = e;
-  console.log(_isStopped);
 });
 
 function raf(time) {
@@ -67,7 +66,7 @@ function App() {
         }
         return prevTime + 1;
       });
-    }, 90);
+    }, 0);
 
     return () => clearInterval(loadingInterval);
   }, [timer]);
