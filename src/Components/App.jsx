@@ -67,7 +67,7 @@ function App() {
         }
         return prevTime + 1;
       });
-    }, 10);
+    }, 90);
 
     return () => clearInterval(loadingInterval);
   }, [timer]);
