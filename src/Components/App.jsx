@@ -36,12 +36,9 @@ import Page_Six_Image from "../assets/Images/Page_Six_Image.webp";
 
 const lenis = new Lenis({
   infinite: true,
-  syncTouch: true,
 });
 
-lenis.on("scroll", (e) => {
-  const { _isStopped } = e;
-});
+lenis.on("scroll", () => {});
 
 function raf(time) {
   lenis.raf(time);
@@ -66,7 +63,7 @@ function App() {
         }
         return prevTime + 1;
       });
-    }, 0);
+    }, 70);
 
     return () => clearInterval(loadingInterval);
   }, [timer]);
