@@ -13,13 +13,38 @@
   }
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+body{
+  scroll-behavior: smooth;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 * {
   transition: all 0.3s linear !important;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,4 +54,11 @@
 ::-webkit-scrollbar-thumb {
   background: #082198;
   border-radius: 10px;
+}
+h1 {
+  line-height: 75px !important;
+}
+
+p {
+  color: #00000080;
 }

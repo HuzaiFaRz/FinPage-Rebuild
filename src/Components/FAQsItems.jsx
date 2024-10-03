@@ -32,7 +32,7 @@ function FAQsItems() {
 
   const [faqsDetailOpen, setFaqsDetailOpen] = React.useState(false);
 
-  const faqsDetailOpenFunctionility = () => {
+  const faqsDetailOpenFunctionility = (index) => {
     setFaqsDetailOpen(!faqsDetailOpen);
   };
 
@@ -42,19 +42,19 @@ function FAQsItems() {
         return (
           <>
             <div
-              className="Faqs-Item w-full lg:w-[1024px] cursor-pointer flex flex-col justify-center items-start py-8 border border-[#000] border-b-[#ffffff33]"
+              className="Faqs-Item w-full lg:w-[850px] cursor-pointer flex flex-col justify-center items-start py-8 border border-[#000] border-b-[#ffffff33]"
               key={index}
               onClick={() => {
                 // e.currentTarget.classList.toggle("open");
                 // e.currentTarget.classList.contains("open") ? "" : "";
                 // console.log(e.currentTarget.childNodes[index]);
-                faqsDetailOpenFunctionility();
+                faqsDetailOpenFunctionility(index);
               }}
             >
               <div className="w-full flex flex-row justify-between items-center relative">
-                <h1 className="Faqs-Title text-[#fff] text-2xl font-sora font-normal text-start">
+                <h2 className="Faqs-Title text-[#fff] text-2xl font-sora font-normal text-start">
                   {element.heading}
-                </h1>
+                </h2>
                 <div className="w-[60px] h-full">
                   <div
                     className={`Faqs-Close border border-[#ffffff33] rounded-full w-[48px] h-[48px] ml-8 relative overflow-hidden cursor-pointer flex flex-col justify-center items-center
@@ -84,7 +84,7 @@ function FAQsItems() {
                 className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%]
                 ${
                   faqsDetailOpen
-                    ? "opacity-1 h-[200px] sm:h-[150px] overflow-y-scroll sm:overflow-hidden"
+                    ? "opacity-1 h-[200px] sm:h-[150px] overflow-y-scroll md:overflow-hidden"
                     : "opacity-0 h-0 sm:h-[0] overflow-y-hidden sm:overflow-hidden"
                 }`}
               >

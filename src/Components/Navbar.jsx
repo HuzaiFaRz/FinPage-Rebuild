@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import Navbar_Logo from "../assets/Images/Navbar_Logo.svg";
 import Navbar_Arrow from "../assets/Images/Navbar_Arrow.svg";
 
+export { Navbar_Logo };
 const linksArray = ["Overview", "Features", "Testimonial", "FAQ", "Downlaod"];
 
 function Navbar() {
@@ -44,7 +45,7 @@ function Navbar() {
                 style={{ transition: "all 0.3s ease-in-out" }}
                 className={`Navbar_Li hidden invisible text-sm tracking-tight mt-0 px-2 py-2 lg:block lg:visible text-[#ffffffcc] hover:text-[#ffffff] `}
               >
-                <a href="#" className="Navbar_Link px-2 py-2">
+                <a href={`#${element}`} className="Navbar_Link px-2 py-2">
                   {element}
                 </a>
               </li>
@@ -58,7 +59,7 @@ function Navbar() {
                   navbarOpen ? "opacity-1 mt-0" : "opacity-0 mt-60"
                 }`}
               >
-                <a href="#" className="Navbar_Link px-2 py-2">
+                <a href="#" className="Offcanvas_Li px-2 py-2">
                   {element}
                 </a>
               </li>

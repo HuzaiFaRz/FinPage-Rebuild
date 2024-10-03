@@ -36,8 +36,6 @@ function CommentsCards() {
   return (
     <Fragment>
       {commentsCardsContent.map((element, index) => {
-        console.log(index);
-
         return (
           <div
             className="min-w-[18rem] p-8 md:min-w-[20rem] md:p-10 lg:min-w-[25rem] lg:p-14 font-sora font-normal flex flex-col justify-between items-start rounded-3xl bg-gradient-to-br from-[#0100e3] via-[#1b9feb] to-[#8736f3]"
