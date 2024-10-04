@@ -4,36 +4,33 @@ import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import barba from "@barba/core";
 import gsap from "gsap";
-import Navbar from "./src/Components/Navbar";
-import Heading from "./src/Components/Heading";
-import Paragraph from "./src/Components/Paragraph";
-import Button from "./src/Components/Button";
-import PageContent from "./src/Components/PageContent";
-import SpecialCard from "./src/Components/SpecialCard";
-import SpecialHeading from "./src/Components/SpecialHeading";
-import FAQsItems from "./src/Components/FAQsItems";
-import CommentsCards from "./src/Components/CommentsCards";
-import Footer from "./src/Components/Footer";
+import Navbar from "./Navbar";
+import Heading from "./Heading";
+import Paragraph from "./Paragraph";
+import Button from "./Button";
+import PageContent from "./PageContent";
+import SpecialCard from "./SpecialCard";
+import SpecialHeading from "./SpecialHeading";
+import FAQsItems from "./FAQsItems";
+import CommentsCards from "./CommentsCards";
+import Footer from "./Footer";
 
-import Page_One_Image from "./src/assets/Images/Page_One_Image.webp";
-import Page_One_Icon from "./src/assets/Images/Page_One_Icon.svg";
-import Page_Two_Image from "./src/assets/Images/Page_Two_Image.webp";
-import Page_Two_Icon from "./src/assets/Images/Page_Two_Icon.svg";
-import Page_Three_Image from "./src/assets/Images/Page_Three_Image.webp";
-import Page_Three_Icon from "./src/assets/Images/Page_Three_Icon.svg";
-import Faqs_Icon from "./src/assets/Images/Faqs_Icon.svg";
-import AppStoreIcon from "./src/assets/Images/App_Store_Icon.svg";
-import GooglePlayIcon from "./src/assets/Images/Google_Play_Icon.svg";
-import Page_Six_Image from "./src/assets/Images/Page_Six_Image.webp";
+import Page_One_Image from "../assets/Images/Page_One_Image.webp";
+import Page_One_Icon from "../assets/Images/Page_One_Icon.svg";
+import Page_Two_Image from "../assets/Images/Page_Two_Image.webp";
+import Page_Two_Icon from "../assets/Images/Page_Two_Icon.svg";
+import Page_Three_Image from "../assets/Images/Page_Three_Image.webp";
+import Page_Three_Icon from "../assets/Images/Page_Three_Icon.svg";
+import Faqs_Icon from "../assets/Images/Faqs_Icon.svg";
+import AppStoreIcon from "../assets/Images/App_Store_Icon.svg";
+import GooglePlayIcon from "../assets/Images/Google_Play_Icon.svg";
+import Page_Six_Image from "../assets/Images/Page_Six_Image.webp";
 
 // barba.init({
 //   // ...
 // });
 
-const lenis = new Lenis({
-  syncTouch: true,
-  infinite: true,
-});
+const lenis = new Lenis();
 
 lenis.on("scroll", () => {});
 
@@ -108,7 +105,7 @@ function App() {
               className="main overflow-x-hidden w-full h-full bg-[url('https://assets-global.website-files.com/654642f8b348306163b5ff9c/654653362e267b5cefd2a9fa_Hero.webp')] bg-cover bg-center bg-no-repeat bg-fixed font-dmsans"
             >
               {isLoading ? (
-                <div className="loading-screen w-[100vw] h-[100vh] flex justify-center items-center bg-[#000] z-[1000000]">
+                <div className="loading-screen w-[100vw] h-[100vh] min-h-full flex justify-center items-center bg-[#000] z-[1000000]">
                   <h1 className="text-[40vw] text-white font-mono">{timer}%</h1>
                 </div>
               ) : (

@@ -55,7 +55,7 @@ function Navbar() {
               <li
                 key={index}
                 style={{ transition: "all 0.3s ease-in-out" }}
-                className={`Offcanvas_Li block visible text-2xl opacity-1 tracking-tight py-8 px-10 mt-5 lg:hidden lg:invisible text-[#ffffffcc] hover:text-[#ffffff] ${
+                className={`Offcanvas_Li block visible text-2xl opacity-1 tracking-tight py-4 px-10 mt-5 lg:hidden lg:invisible text-[#ffffffcc] hover:text-[#ffffff] ${
                   navbarOpen ? "opacity-1 mt-0" : "opacity-0 mt-60"
                 }`}
               >
