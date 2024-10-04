@@ -59,7 +59,7 @@ function Navbar() {
                   navbarOpen ? "opacity-1 mt-0" : "opacity-0 mt-60"
                 }`}
               >
-                <a href="#" className="Offcanvas_Li px-2 py-2">
+                <a href={`#${element}`} className="Offcanvas_Li px-2 py-2">
                   {element}
                 </a>
               </li>

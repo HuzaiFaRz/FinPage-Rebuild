@@ -30,7 +30,9 @@ import Page_Six_Image from "../assets/Images/Page_Six_Image.webp";
 //   // ...
 // });
 
-const lenis = new Lenis();
+const lenis = new Lenis({
+infinite:true,
+});
 
 lenis.on("scroll", () => {});
 
@@ -57,7 +59,7 @@ function App() {
         }
         return prevTime + 1;
       });
-    }, 70);
+    }, 0);
 
     return () => clearInterval(loadingInterval);
   }, [timer]);
