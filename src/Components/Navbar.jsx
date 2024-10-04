@@ -77,8 +77,7 @@ function Navbar() {
 
           <div
             className="w-[4rem] h-[4rem] flex flex-col justify-center items-center"
-            onClick={(e) => {
-              e.target.classList.toggle("open");
+            onClick={() => {
               NavbrOpenFunctionility();
             }}
           >

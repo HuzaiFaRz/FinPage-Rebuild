@@ -30,10 +30,16 @@ function FAQsItems() {
     },
   ];
 
-  const [faqsDetailOpen, setFaqsDetailOpen] = React.useState(false);
+  const [visibleFAQ, setVisibleFAQ] = React.useState(
+    Array(faqsItemsContent.length).fill(false)
+  );
 
-  const faqsDetailOpenFunctionility = (index) => {
-    setFaqsDetailOpen(!faqsDetailOpen);
+  const toggleFAQ = (index) => {
+    setVisibleFAQ((prevState) => {
+      const newVisibleFAQ = [...prevState];
+      newVisibleFAQ[index] = !newVisibleFAQ[index]; // Toggle visibility for the specific index
+      return newVisibleFAQ;
+    });
   };
 
   return (
@@ -45,10 +51,7 @@ function FAQsItems() {
               className="Faqs-Item w-full lg:w-[850px] cursor-pointer flex flex-col justify-center items-start py-8 border border-[#000] border-b-[#ffffff33]"
               key={index}
               onClick={() => {
-                // e.currentTarget.classList.toggle("open");
-                // e.currentTarget.classList.contains("open") ? "" : "";
-                // console.log(e.currentTarget.childNodes[index]);
-                faqsDetailOpenFunctionility(index);
+                toggleFAQ(index);
               }}
             >
               <div className="w-full flex flex-row justify-between items-center relative">
@@ -59,23 +62,25 @@ function FAQsItems() {
                   <div
                     className={`Faqs-Close border border-[#ffffff33] rounded-full w-[48px] h-[48px] ml-8 relative overflow-hidden cursor-pointer flex flex-col justify-center items-center
                     
-                    ${faqsDetailOpen ? "bg-[#fff]" : "bg-[#ffffff33]"}`}
+                    ${visibleFAQ[index] ? "bg-[#fff]" : "bg-[#ffffff33]"}`}
                     style={{ transition: "all 0.3s linear" }}
                   >
                     <span
                       className={`w-[60%] h-[2px] ${
-                        faqsDetailOpen
+                        visibleFAQ[index]
                           ? "absolute left-[15px] -translate-x-[5px] rotate-45 bg-[#000]"
                           : "absolute left-[15px] -translate-x-[5px] bg-[#fff] "
                       }`}
                     ></span>
 
                     <span
-                      className={`w-[60%] h-[2px] ${
-                        faqsDetailOpen
-                          ? "absolute left-[15px] -translate-x-[5px] -rotate-45 bg-[#000]"
-                          : "absolute left-[15px] -translate-x-[5px] opacity-0 bg-[#fff]"
-                      }`}
+                      className={`w-[60%] h-[2px]
+                        
+                        ${
+                          visibleFAQ[index]
+                            ? `absolute left-[15px] -translate-x-[5px] -rotate-45 bg-[#000]`
+                            : "absolute left-[15px] -translate-x-[5px] opacity-0 bg-[#fff]"
+                        }`}
                     ></span>
                   </div>
                 </div>
@@ -83,7 +88,7 @@ function FAQsItems() {
               <p
                 className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%]
                 ${
-                  faqsDetailOpen
+                  visibleFAQ[index]
                     ? "opacity-1 h-[200px] sm:h-[150px] overflow-y-scroll md:overflow-hidden"
                     : "opacity-0 h-0 sm:h-[0] overflow-y-hidden sm:overflow-hidden"
                 }`}

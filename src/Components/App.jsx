@@ -31,7 +31,7 @@ import Page_Six_Image from "../assets/Images/Page_Six_Image.webp";
 // });
 
 const lenis = new Lenis({
-infinite:true,
+  // infinite: true,
 });
 
 lenis.on("scroll", () => {});
@@ -112,7 +112,27 @@ function App() {
                 </div>
               ) : (
                 <div>
+
+
+
+
                   <Navbar />
+
+                  <div
+                    className="page_five w-full h-full flex flex-col justify-center items-center text-center py-20 bg-[#000]"
+                    id="FAQ"
+                  >
+                    <img
+                      src={Faqs_Icon}
+                      className="object-center object-cover w-[60px] h-[60px] mb-5"
+                    />
+                    <Heading text="FAQs" />
+                    <div className="flex flex-col justify-center items-center gap-5 w-full py-5 px-10">
+                      <FAQsItems />
+                    </div>
+                  </div>
+
+
 
                   <div
                     className="main_page bg-[#0000004d]  w-full h-[100vh] flex flex-col items-start justify-center gap-8 px-8 xl:px-16"
@@ -181,20 +201,7 @@ function App() {
                     </div>
                   </div>
 
-                  <div
-                    className="page_five w-full h-full flex flex-col justify-center items-center text-center py-20 bg-[#000]"
-                    id="FAQ"
-                  >
-                    <img
-                      src={Faqs_Icon}
-                      className="object-center object-cover w-[60px] h-[60px] mb-5"
-                    />
-                    <Heading text="FAQs" />
-                    <div className="flex flex-col justify-center items-center gap-5 w-full py-5 px-10">
-                      <FAQsItems />
-                    </div>
-                  </div>
-
+           
                   <div
                     className="page_six bg-gradient-to-br from-[#0100e3] via-[#1b9feb] to-[#8736f3] flex flex-wrap justify-center items-center overflow-hidden"
                     id="Downlaod"
