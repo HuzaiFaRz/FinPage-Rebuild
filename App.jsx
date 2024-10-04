@@ -4,37 +4,34 @@ import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import barba from "@barba/core";
 import gsap from "gsap";
-import Navbar from "./Navbar";
-import Heading from "./Heading";
-import Paragraph from "./Paragraph";
-import Button from "./Button";
-import PageContent from "./PageContent";
-import SpecialCard from "./SpecialCard";
-import SpecialHeading from "./SpecialHeading";
-import CommentsCards from "./CommentsCards";
-import Footer from "./Footer";
-import Page_One_Image from "../assets/Images/Page_One_Image.webp";
-import Page_One_Icon from "../assets/Images/Page_One_Icon.svg";
+import Navbar from "./src/Components/Navbar";
+import Heading from "./src/Components/Heading";
+import Paragraph from "./src/Components/Paragraph";
+import Button from "./src/Components/Button";
+import PageContent from "./src/Components/PageContent";
+import SpecialCard from "./src/Components/SpecialCard";
+import SpecialHeading from "./src/Components/SpecialHeading";
+import FAQsItems from "./src/Components/FAQsItems";
+import CommentsCards from "./src/Components/CommentsCards";
+import Footer from "./src/Components/Footer";
 
-import Page_Two_Image from "../assets/Images/Page_Two_Image.webp";
-import Page_Two_Icon from "../assets/Images/Page_Two_Icon.svg";
-
-import Page_Three_Image from "../assets/Images/Page_Three_Image.webp";
-import Page_Three_Icon from "../assets/Images/Page_Three_Icon.svg";
-
-import Faqs_Icon from "../assets/Images/Faqs_Icon.svg";
-import FAQsItems from "./FAQsItems";
-
-import AppStoreIcon from "../assets/Images/App_Store_Icon.svg";
-import GooglePlayIcon from "../assets/Images/Google_Play_Icon.svg";
-
-import Page_Six_Image from "../assets/Images/Page_Six_Image.webp";
+import Page_One_Image from "./src/assets/Images/Page_One_Image.webp";
+import Page_One_Icon from "./src/assets/Images/Page_One_Icon.svg";
+import Page_Two_Image from "./src/assets/Images/Page_Two_Image.webp";
+import Page_Two_Icon from "./src/assets/Images/Page_Two_Icon.svg";
+import Page_Three_Image from "./src/assets/Images/Page_Three_Image.webp";
+import Page_Three_Icon from "./src/assets/Images/Page_Three_Icon.svg";
+import Faqs_Icon from "./src/assets/Images/Faqs_Icon.svg";
+import AppStoreIcon from "./src/assets/Images/App_Store_Icon.svg";
+import GooglePlayIcon from "./src/assets/Images/Google_Play_Icon.svg";
+import Page_Six_Image from "./src/assets/Images/Page_Six_Image.webp";
 
 // barba.init({
 //   // ...
 // });
 
 const lenis = new Lenis({
+  syncTouch: true,
   infinite: true,
 });
 
@@ -177,7 +174,7 @@ function App() {
                       lineBreak={""}
                     />
                     <div className="w-full bg-clip-border cursor-pointer relative p-5">
-                      <div className="flex flex-nowrap items-center justify-center gap-x-6 gap-y-6 overflow-x-auto overflow-y-hidden px-8 pb-10 pt-10">
+                      <div className="flex flex-nowrap items-center justify-start gap-x-6 gap-y-6 overflow-x-auto overflow-y-hidden px-4 pb-10 pt-10">
                         <div className="absolute z-10 left-0 top-0 bottom-0 w-24 h-full bg-gradient-to-r from-black to-transparent"></div>
                         <CommentsCards />
                         <div className="absolute z-10 right-0 top-0 bottom-0 w-24 h-full bg-gradient-to-l from-black to-transparent"></div>
