@@ -25,7 +25,7 @@ function Footer() {
         <div className="flex flex-wrap justify-center items-center px-1 sm:px-10">
           <div className="w-full sm:w-1/2 flex flex-col justify-center items-center text-center sm:text-start sm:items-start py-12 px-2 md:px-5 gap-10">
             <img src={Navbar_Logo} className="w-[200px]" />
-            <p className="text-md sm:text-lg text-[#ffffffb3] w-full sm:w-[70%]">
+            <p className="text-[1rem] md:text-lg text-[#ffffffb3] w-full sm:w-[70%]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse varius enim in eros elementum tristique.
             </p>
