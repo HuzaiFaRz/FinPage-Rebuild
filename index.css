@@ -52,7 +52,13 @@ html.lenis body {
   border-radius: 10px;
 }
 h1 {
-  line-height: 60px !important;
+  line-height: 70px !important;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    line-height: 50px !important;
+  }
 }
 
 p {
