@@ -61,9 +61,7 @@ function FAQsItems() {
                 <div className="w-[60px] h-full">
                   <div
                     className={`Faqs-Close border border-[#ffffff33] rounded-full w-[48px] h-[48px] ml-8 relative overflow-hidden cursor-pointer flex flex-col justify-center items-center
-                    
                     ${visibleFAQ[index] ? "bg-[#fff]" : "bg-[#ffffff33]"}`}
-                    style={{ transition: "all 0.3s linear" }}
                   >
                     <span
                       className={`w-[60%] h-[2px] ${

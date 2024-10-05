@@ -36,7 +36,6 @@ function SpecialCard() {
     <Fragment>
       {specialCardContent.map((element, index) => (
         <div
-          style={{ transition: "all 0.3s linear" }}
           className="w-full h-96 md:w-96 md:h-96 py-5 px-5 font-sora bg-[#ffffff0d] border border-[#ffffff33] rounded-3xl relative overflow-hidden
           hover:-translate-y-5 hover:bg-[#ffffff1a] will-change-[transform,background]"
           key={index}
