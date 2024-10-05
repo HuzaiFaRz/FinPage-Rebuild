@@ -148,7 +148,7 @@ function App() {
                   />
 
                   <div
-                    className="page_four w-full h-full flex flex-col justify-center items-center py-20 bg-[#000]"
+                    className="page_four w-full h-full flex flex-col justify-center items-center py-5 sm:py-20 bg-[#000]"
                     id="Features"
                   >
                     <SpecialHeading
@@ -163,7 +163,7 @@ function App() {
                   </div>
 
                   <div
-                    className="page_five w-full h-full flex flex-col justify-center items-center py-20 bg-[#000]"
+                    className="page_five w-full h-full flex flex-col justify-center items-center py-5 sm:py-20 bg-[#000] px-2 sm-px-0"
                     id="Testimonial"
                   >
                     <SpecialHeading
@@ -182,7 +182,7 @@ function App() {
                   </div>
 
                   <div
-                    className="page_six w-full h-full flex flex-col justify-center items-center text-center py-20 bg-[#000]"
+                    className="page_six w-full h-full flex flex-col justify-center items-center text-center py-5 sm:py-20 bg-[#000]"
                     id="FAQ"
                   >
                     <img
