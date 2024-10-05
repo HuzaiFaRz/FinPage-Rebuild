@@ -29,7 +29,7 @@ function Footer() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse varius enim in eros elementum tristique.
             </p>
-            <div className="flex flex-wrap justify-start items-center gap-5">
+            <div className="flex flex-wrap justify-center sm:justify-start items-center gap-5">
               <FooterIcon
                 href="https://www.apple.com/id/app-store/"
                 src={Apple_Store_Icon}
@@ -43,13 +43,13 @@ function Footer() {
             </div>
           </div>
 
-          <div className="w-full sm:w-1/2 flex flex-wrap justify-evenly items-start py-12 px-0 sm:px-5">
+          <div className="w-full sm:w-1/2 flex flex-wrap justify-between items-start py-12 px-6 md:px-5">
             <ul className="flex flex-col justify-center items-start">
               <h5 className="text-2xl text-white pb-5">Product</h5>
               {footerLinksArray1.map((element, index) => {
                 return (
                   <li
-                    className="Footer_Li text-lg tracking-tight mt-0 px-2 py-2 text-[#ffffffb3] hover:text-[#ffffff] "
+                    className="Footer_Li text-lg tracking-tight mt-0 px-2 py-2 text-[#ffffffb3] hover:text-[#ffffff]"
                     key={index}
                   >
                     <a href={`#${element}`}>{element}</a>
@@ -62,7 +62,7 @@ function Footer() {
               {footerLinksArray2.map((element, index) => {
                 return (
                   <li
-                    className="Footer_Li  text-lg tracking-tight mt-0 px-2 py-2 text-[#ffffffb3] hover:text-[#ffffff] "
+                    className="Footer_Li  text-lg tracking-tight mt-0 px-2 py-2 text-[#ffffffb3] hover:text-[#ffffff]"
                     key={index}
                   >
                     <a href={`${element}.jsx`} target="_blank">
