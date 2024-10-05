@@ -172,7 +172,7 @@ function App() {
                       centerText=" speak for us."
                       lineBreak={""}
                     />
-                    <div className="w-full bg-clip-border cursor-pointer relative p-5">
+                    <div className="w-full bg-clip-border cursor-pointer relative p-3">
                       <div className="flex flex-nowrap items-center justify-start gap-x-6 gap-y-6 overflow-x-auto overflow-y-hidden px-4 pb-10 pt-10">
                         <div className="absolute z-10 left-0 top-0 bottom-0 w-24 h-full bg-gradient-to-r from-black to-transparent"></div>
                         <CommentsCards />
