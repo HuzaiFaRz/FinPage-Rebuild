@@ -4,7 +4,7 @@ import Footer_Instagram_Icon from "../assets/Images/Footer_Instagram_Icon.svg";
 import Footer_Twitter_Icon from "../assets/Images/Footer_Twitter_Icon.svg";
 import Footer_Facebook_Icon from "../assets/Images/Footer_Facebook_Icon.svg";
 import FooterIcon from "./FooterIcon";
-
+import { Link } from "react-router-dom";
 import Apple_Store_Icon from "../assets/Images/App_Store_Image.webp";
 import Google_Play_Image from "../assets/Images/Google_Play_Image.webp";
 
@@ -43,7 +43,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="w-full sm:w-1/2 flex flex-wrap justify-between items-start py-12 px-10 md:px-5">
+          <div className="w-full sm:w-1/2 flex flex-wrap justify-between items-start py-12 px-10 sm:px-5 gap-y-10">
             <ul className="flex flex-col justify-center items-start">
               <h5 className="text-2xl text-white pb-5">Product</h5>
               {footerLinksArray1.map((element, index) => {
@@ -52,7 +52,9 @@ function Footer() {
                     className="Footer_Li text-lg tracking-tight mt-0 px-2 py-2 text-[#ffffffb3] hover:text-[#ffffff]"
                     key={index}
                   >
-                    <a href={`#${element}`}>{element}</a>
+                    <a id="link" href={`#${element}`}>
+                      {element}
+                    </a>
                   </li>
                 );
               })}
@@ -65,9 +67,9 @@ function Footer() {
                     className="Footer_Li  text-lg tracking-tight mt-0 px-2 py-2 text-[#ffffffb3] hover:text-[#ffffff]"
                     key={index}
                   >
-                    <a href={`${element}.jsx`} target="_blank">
+                    <Link to={`/${element}`} id="link">
                       {element}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
@@ -75,7 +77,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col  sm:flex-row justify-center sm:justify-between items-center py-10 px-8 gap-y-10 w-full">
+        <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center py-10 px-8 gap-y-10 w-full">
           <div className="flex flex-row justify-center items-center gap-7">
             <FooterIcon
               href="https://instagram.com"
