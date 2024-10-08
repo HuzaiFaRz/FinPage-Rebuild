@@ -67,7 +67,7 @@ function Footer() {
                     className="Footer_Li  text-lg tracking-tight mt-0 px-2 py-2 text-[#ffffffb3] hover:text-[#ffffff]"
                     key={index}
                   >
-                    <Link to={`/${element}`} id="link">
+                    <Link to={`${element}`} id="link">
                       {element}
                     </Link>
                   </li>
