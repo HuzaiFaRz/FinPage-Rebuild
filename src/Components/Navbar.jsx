@@ -35,7 +35,6 @@ function Navbar() {
                 className="Navbar_Logo w-36 md:w-40 lg:w-full"
               />
             </Link>
-            <a href="/"></a>
           </div>
 
           {/* Navbar Center */}
