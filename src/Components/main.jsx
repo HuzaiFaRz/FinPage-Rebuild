@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./Navbar";
 import StyleGuid from "./StyleGuid";
 import License from "./License";
-import Changelog from "./ChangeLog";
+import ChangeLog from "./ChangeLog";
 import Error from "./Error";
 
 const router = createBrowserRouter([
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         element: <License />,
       },
       {
-        path: "Changelog",
-        element: <Changelog />,
+        path: "ChangeLog",
+        element: <ChangeLog />,
       },
     ],
   },
