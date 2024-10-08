@@ -25,20 +25,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   window.lenis = new Lenis({
-    duration: 5,
+    duration: 2,
     easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
     orientation: "horizontal",
     smoothWheel: true,
     wheelMultiplier: 1,
     smoothTouch: true,
     touchMultiplier: 2,
-    infinite: false,
+    infinite: true,
     direction: "horizontal",
     smooth: true,
     gestureDirection: "both",
     mouseMultiplier: 1,
   });
-  window.lenis = new Lenis({});
+  window.lenis = new Lenis({
+    infinite: true,
+    syncTouch: true,
+  });
   const raf = (time) => {
     window.lenis.raf(time);
     requestAnimationFrame(raf);
@@ -125,7 +128,7 @@ const App = () => {
           }
           return prevTime + 1;
         });
-      }, 0.0);
+      }, 0);
     });
     return () => clearInterval(loadingInterval);
   }, [timer]);
