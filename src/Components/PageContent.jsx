@@ -19,10 +19,7 @@ function pageContent({ image, icon, heading, title, flex }) {
           <Paragraph text={title} />
         </div>
         <div className="w-full lg:w-[50%] h-full flex justify-center">
-          <img
-            src={image}
-            className="object-cover w-full h-full"
-          />
+          <img src={image} className="object-cover w-full h-full" />
         </div>
       </div>
     </Fragment>

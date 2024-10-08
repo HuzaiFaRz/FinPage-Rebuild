@@ -22,13 +22,13 @@ function StyleGuid() {
         <Heading text="How to customize formatting for each rich text" />
         <Paragraph text="Headings, paragraphs, blockquotes, figures, images, and figure captions can all be styled after a class is added to the rich text element using the When inside of nested selector system." />
         <ul className="flex flex-col justify-start items-center list-decimal gap-4 px-5">
-          {textArray.map((element) => {
+          {textArray.map((element, index) => {
             return (
-              <>
+              <Fragment key={index}>
                 <li className="w-full text-[#fff] text-lg font-sora">
                   {element}
                 </li>
-              </>
+              </Fragment>
             );
           })}
         </ul>

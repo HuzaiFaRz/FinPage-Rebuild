@@ -27,7 +27,7 @@ html.lenis body {
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .lenis.lenis-smooth iframe {
@@ -40,7 +40,7 @@ html.lenis body {
 
 ::-webkit-scrollbar {
   width: 8px;
-  height: 8px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -53,6 +53,10 @@ html.lenis body {
 }
 h1 {
   line-height: 70px !important;
+}
+
+body {
+  overflow-x: hidden !important;
 }
 
 @media (max-width: 500px) {
