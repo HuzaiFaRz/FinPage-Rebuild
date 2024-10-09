@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./Navbar";
 import StyleGuid from "./StyleGuid";
 import License from "./License";
-import ChangeLog from "./ChangeLog.jsx";
+import ChangeLog from "./ChangeLog";
 import Error from "./Error";
 
 const router = createBrowserRouter([
