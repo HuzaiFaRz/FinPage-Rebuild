@@ -13,11 +13,11 @@ function Error() {
         style={{ transition: "all 0.3s ease-in-out" }}
       >
         <div
-          className="main_page bg-[#0000009d]  w-full h-[100vh] flex flex-col items-center text-center justify-center gap-8 px-8 xl:px-16"
+          className="main_page bg-[#0000009d] w-full h-[100vh] flex flex-col items-center text-center justify-center gap-8 px-8 xl:px-16"
           id="Overview"
         >
           <Heading text={"Oops!"} />
-          <p className="w-full font-dmsans text-lg  text-[#ffffff] font-light tracking-wide leading-6">
+          <p className="w-full font-dmsans text-lg text-[#ffffff] font-light tracking-wide leading-6">
             Sorry, an unexpected error has occurred.
           </p>
           <Paragraph text={error.statusText || error.message} />

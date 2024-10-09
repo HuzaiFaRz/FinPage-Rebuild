@@ -7,5 +7,4 @@ function Paragraph({ text }) {
     </p>
   );
 }
-
 export default Paragraph;

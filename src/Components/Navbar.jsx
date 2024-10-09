@@ -105,20 +105,19 @@ function Navbar() {
               <div className="w-full h-full scale-50 sm:scale-75 lg:scale-0 relative mt-4 md:mt-5 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden">
                 <span
                   className={`${`origin-left block absolute h-[3px] bg-[#fff] rounded-[9px] opacity-100 transition-all ease-in-out duration-300`}
-${
-  navbarOpen
-    ? "transform rotate-45 top-[-3px] left-[8px] w-full"
-    : "transform rotate-0  top-0 right-0 w-2/4"
-}`}
+                  ${
+                    navbarOpen
+                      ? "transform rotate-45 top-[-3px] left-[8px] w-full"
+                      : "transform rotate-0  top-0 right-0 w-2/4"
+                  }`}
                 ></span>
 
                 <span
-                  className={`${`origin-left block absolute  bg-[#fff] h-[3px] w-full rounded-[9px] opacity-100 left-0 transition-all ease-in-out duration-300`}
-${
-  navbarOpen
-    ? "transform -rotate-45 top-[39px] left-[8px]"
-    : "transform rotate-0 top-[15px] left-0"
-}`}
+                  className={`${`origin-left block absolute  bg-[#fff] h-[3px] w-full rounded-[9px] opacity-100 left-0 transition-all ease-in-out duration-300`}${
+                    navbarOpen
+                      ? "transform -rotate-45 top-[39px] left-[8px]"
+                      : "transform rotate-0 top-[15px] left-0"
+                  }`}
                 ></span>
               </div>
             </div>
