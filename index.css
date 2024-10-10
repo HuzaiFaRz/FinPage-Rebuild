@@ -18,8 +18,6 @@ html.lenis body {
   height: auto;
 }
 
-
-
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
@@ -34,6 +32,10 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+#CommentsCardRow {
+  transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 * {

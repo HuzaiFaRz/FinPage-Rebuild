@@ -1,20 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "../../index.css";
+import "../index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import App from "./App";
-// import Navbar from "./Navbar";
-// import StyleGuid from "./StyleGuid";
-// import License from "./License";
-// import ChangeLog from "./ChangeLog.jsx";
-// import Error from "./Error";
-
-import App from "@/Components/App";
-import Navbar from "@/Components/Navbar";
-import StyleGuid from "@/Components/StyleGuid";
-import License from "@/Components/License";
-import ChangeLog from "@/Components/ChangeLog";
-import Error from "@/Components/Error";
+import App from "./App";
+import Navbar from "./Components/Navbar";
+import StyleGuid from "./Components/StyleGuid";
+import License from "./Components/License";
+import ChangeLog from "./Components/ChangeLog";
+import Error from "./Components/Error";
 
 const router = createBrowserRouter([
   {

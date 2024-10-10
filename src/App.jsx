@@ -1,139 +1,101 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect, Fragment, useRef } from "react";
+
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+
+import Heading from "./Components/Heading";
+import Paragraph from "./Components/Paragraph";
+import Button from "./Components/Button";
+import PageContent from "./Components/PageContent";
+import SpecialCard from "./Components/SpecialCard";
+import SpecialHeading from "./Components/SpecialHeading";
+import FAQsItems from "./Components/FAQsItems";
+import CommentsCards from "./Components/CommentsCards";
+import Page_One_Image from "../src/assets/Images/Page_One_Image.webp";
+import Page_One_Icon from "../src/assets/Images/Page_One_Icon.svg";
+import Page_Two_Image from "../src/assets/Images/Page_Two_Image.webp";
+import Page_Two_Icon from "../src/assets/Images/Page_Two_Icon.svg";
+import Page_Three_Image from "../src/assets/Images/Page_Three_Image.webp";
+import Page_Three_Icon from "../src/assets/Images/Page_Three_Icon.svg";
+import Faqs_Icon from "../src/assets/Images/Faqs_Icon.svg";
+import AppStoreIcon from "../src/assets/Images/App_Store_Icon.svg";
+import GooglePlayIcon from "../src/assets/Images/Google_Play_Icon.svg";
+import Page_Six_Image from "../src/assets/Images/Page_Six_Image.webp";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Heading from "./Heading";
-import Paragraph from "./Paragraph";
-import Button from "./Button";
-import PageContent from "./PageContent";
-import SpecialCard from "./SpecialCard";
-import SpecialHeading from "./SpecialHeading";
-import FAQsItems from "./FAQsItems";
-import CommentsCards from "./CommentsCards";
-import Page_One_Image from "../assets/Images/Page_One_Image.webp";
-import Page_One_Icon from "../assets/Images/Page_One_Icon.svg";
-import Page_Two_Image from "../assets/Images/Page_Two_Image.webp";
-import Page_Two_Icon from "../assets/Images/Page_Two_Icon.svg";
-import Page_Three_Image from "../assets/Images/Page_Three_Image.webp";
-import Page_Three_Icon from "../assets/Images/Page_Three_Icon.svg";
-import Faqs_Icon from "../assets/Images/Faqs_Icon.svg";
-import AppStoreIcon from "../assets/Images/App_Store_Icon.svg";
-import GooglePlayIcon from "../assets/Images/Google_Play_Icon.svg";
-import Page_Six_Image from "../assets/Images/Page_Six_Image.webp";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  window.lenis = new Lenis({
-    duration: 2,
-    easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
-    orientation: "horizontal",
-    smoothWheel: true,
-    wheelMultiplier: 1,
-    smoothTouch: true,
-    touchMultiplier: 2,
-    infinite: true,
-    direction: "horizontal",
-    smooth: true,
-    gestureDirection: "both",
-    mouseMultiplier: 1,
-  });
-  window.lenis = new Lenis({
-    infinite: true,
-    syncTouch: true,
-  });
-  const raf = (time) => {
-    window.lenis.raf(time);
-    requestAnimationFrame(raf);
-  };
-  requestAnimationFrame(raf);
-  window.lenis.on("scroll", ScrollTrigger.update);
-
-  // const [scrollXStart, scrollXSet] = useState([]);
-  // const container = useRef();
-  // const commentsCardRowRefrence = useRef(null);
-  // const testimonialRefrence = useRef(null);
-  // const gsapTimeLine = gsap.timeline();
-  // useEffect(() => {
-  //   if (commentsCardRowRefrence.current && testimonialRefrence.current) {
-  //     const commentRow = commentsCardRowRefrence.current;
-  //     const testimonialRefrenceElem = testimonialRefrence.current;
-
-  //     // commentRow.scrollLeft = commentRow.scrollWidth;
-  //     console.log(commentRow.scrollWidth);
-
-  //     console.log(testimonialRefrenceElem.getBoundingClientRect().top);
-
-  //     gsap.fromTo(
-  //       commentRow,
-  //       { x: 100 },
-  //       {
-  //         x: -100,
-  //         scrollTrigger: {
-  //           trigger: testimonialRefrenceElem,
-  //           scroller: document.body,
-  //           start: `${testimonialRefrenceElem.getBoundingClientRect().top},
-  //             0%
-  //           `,
-  //           end: `top bottom`,
-  //           scrub: 2,
-  //           pin: true,
-  //         },
-  //         duration: 2,
-  //         ease: "power1.inOut",
-  //       }
-  //     );
-  //   }
-  // }, [commentsCardRowRefrence, testimonialRefrence]);
+  const lenis = new Lenis({ duration: 0 });
+  const commentsCardRowRefrence = useRef(null);
+  const testimonialRefrence = useRef(null);
 
   useEffect(() => {
-    Array.from(document.querySelectorAll('a[href^="#"]')).forEach(
-      (linkElem) => {
-        linkElem.addEventListener("click", (e) => {
-          e.preventDefault();
-          const anchorHref = linkElem.getAttribute("href");
-          if (anchorHref === "#") {
-            return;
-          }
-          window.lenis.scrollTo(anchorHref, {
-            immediate: false,
-            duration: 5,
-            easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
-            onComplete() {
-              const scrollTriggers = ScrollTrigger.getAll();
-              scrollTriggers.forEach((st) => {
-                if (st.animation) {
-                  st.animation.progress(1);
-                }
-              });
-            },
-          });
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    lenis.on("scroll", ScrollTrigger.update());
+    requestAnimationFrame(raf);
+    return () => lenis.off("scroll", ScrollTrigger.update());
+  }, [lenis]);
+
+  useEffect(() => {
+    const allAnchor = Array.from(document.querySelectorAll('a[href^="#"]'));
+    const allAnchorAnimation = (e) => {
+      e.preventDefault();
+      const anchorHref = e.currentTarget.getAttribute("href");
+      if (anchorHref !== "#") {
+        lenis.scrollTo(anchorHref, {
+          duration: 11.2,
+          immediate: false,
+          onComplete() {
+            const scrollTriggers = ScrollTrigger.getAll();
+            scrollTriggers.forEach((st) => {
+              if (st.animation) {
+                st.animation.progress(1);
+              }
+            });
+          },
         });
       }
-    );
+    };
+
+    allAnchor.forEach((allAnchorElem) => {
+      allAnchorElem.addEventListener("click", allAnchorAnimation);
+    });
+    return () => {
+      allAnchor.forEach((allAnchorElem) => {
+        allAnchorElem.removeEventListener("click", allAnchorAnimation);
+      });
+    };
   });
 
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [timer, setTimer] = React.useState(0);
-  React.useEffect(() => {
-    let loadingInterval;
-    window.addEventListener("load", () => {
-      setIsLoading(true);
-      loadingInterval = setInterval(() => {
-        setTimer((prevTime) => {
-          if (prevTime === 100 && prevTime <= 100) {
-            setIsLoading(false);
-            clearInterval(loadingInterval);
-            return prevTime;
-          }
-          return prevTime + 1;
-        });
-      }, 0);
-    });
-    return () => clearInterval(loadingInterval);
-  }, [timer]);
+  useEffect(() => {
+    const commentRow = commentsCardRowRefrence.current;
+    const testimonialRefrenceElem = testimonialRefrence.current;
 
-  document.body.style.overflow = isLoading ? "hidden" : "auto";
+    if (commentRow && testimonialRefrenceElem) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: commentRow,
+          start: `-${commentRow.getBoundingClientRect().top} -${commentRow.getBoundingClientRect().right}`,
+          end: "bottom bottom",
+          pin: true,
+          scrub: true,
+        },
+      });
+
+      tl.to(commentRow, {
+        x: `-${commentRow.getBoundingClientRect().right}`,
+      });
+
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+    }
+  }, [commentsCardRowRefrence, testimonialRefrence]);
 
   return (
     <Fragment>
@@ -143,8 +105,8 @@ const App = () => {
         style={{ transition: "all 0.3s ease-in-out" }}
       >
         <div>
-          <div
-            className={`loading-screen w-[100vw] h-[100vh] fixed bottom-0 flex flex-col justify-center items-center bg-[#000] z-[1000000] ${
+          {/* <div
+            className={`loading-screen w-[100vw] h-[100vh] fixed bottom-0 hidden flex-col justify-center items-center bg-[#000] z-[1000000] ${
               isLoading
                 ? "opacity-100 z-[1000000] top-0 "
                 : "opacity-0 z-[-1] -top-full"
@@ -154,7 +116,7 @@ const App = () => {
             <h1 className={`text-[40vw] text-white font-mono timertext`}>
               {timer}%
             </h1>
-          </div>
+          </div> */}
 
           <div
             className="main_page bg-[#0000004d]  w-full h-[100vh] flex flex-col items-start justify-center gap-8 px-8 xl:px-16"
@@ -214,11 +176,10 @@ const App = () => {
             </div>
           </div>
 
-          <div
-            className="page_five min-h-[100vh]
-             w-full h-full flex flex-col justify-center items-center py-5 sm:py-20 bg-[#000] px-2 sm-px-0"
+          {/* <div
+            className="page_five w-full flex flex-col justify-between items-center bg-[#000] relative overflow h-[800px]"
             id="Testimonial"
-            // ref={testimonialRefrence}
+            ref={testimonialRefrence}
           >
             <SpecialHeading
               leftText={"Their"}
@@ -228,14 +189,32 @@ const App = () => {
             />
 
             <div
-              // ref={commentsCardRowRefrence}
+              ref={commentsCardRowRefrence}
               id="commentsCardRow"
-              className="flex flex-nowrap items-center justify-start gap-x-6 px-4 pb-10 pt-10 w-full overflow-x-auto"
+              className="flex flex-row items-center justify-start gap-x-6 px-4 w-full absolute top-[20%] h-[600px]"
+            >
+              <CommentsCards />
+            </div>
+          </div> */}
+          <div
+            className="page_five w-full h-full flex flex-col justify-center py-20 items-center bg-[#000]"
+            id="Testimonial"
+            ref={testimonialRefrence}
+          >
+            <SpecialHeading
+              leftText={"Their"}
+              specialText={"words"}
+              centerText={" speak for us."}
+              lineBreak={""}
+            />
+            <div
+              ref={commentsCardRowRefrence}
+              id="CommentsCardRow"
+              className="flex flex-row items-center justify-start py-10 gap-x-6 px-4 w-full"
             >
               <CommentsCards />
             </div>
           </div>
-
           <div
             className="page_six w-full h-full flex flex-col justify-center items-center text-center py-5 sm:py-20 bg-[#000]"
             id="FAQ"
@@ -289,3 +268,24 @@ const App = () => {
 };
 
 export default App;
+// const [isLoading, setIsLoading] = React.useState(true);
+// const [timer, setTimer] = React.useState(0);
+// React.useEffect(() => {
+//   let loadingInterval;
+//   window.addEventListener("load", () => {
+//     setIsLoading(true);
+//     loadingInterval = setInterval(() => {
+//       setTimer((prevTime) => {
+//         if (prevTime === 100 && prevTime <= 100) {
+//           setIsLoading(false);
+//           clearInterval(loadingInterval);
+//           return prevTime;
+//         }
+//         return prevTime + 1;
+//       });
+//     }, 0);
+//   });
+//   return () => clearInterval(loadingInterval);
+// }, [timer]);
+
+// document.body.style.overflow = isLoading ? "hidden" : "auto";
