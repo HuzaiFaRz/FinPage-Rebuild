@@ -27,21 +27,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  const lenis = new Lenis({ duration: 0 });
   const commentsCardRowRefrence = useRef(null);
   const testimonialRefrence = useRef(null);
 
   useEffect(() => {
+    const lenis = new Lenis({ duration: 0 });
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
     lenis.on("scroll", ScrollTrigger.update());
     requestAnimationFrame(raf);
-    return () => lenis.off("scroll", ScrollTrigger.update());
-  }, [lenis]);
 
-  useEffect(() => {
     const allAnchor = Array.from(document.querySelectorAll('a[href^="#"]'));
     const allAnchorAnimation = (e) => {
       e.preventDefault();
@@ -69,6 +66,7 @@ const App = () => {
       allAnchor.forEach((allAnchorElem) => {
         allAnchorElem.removeEventListener("click", allAnchorAnimation);
       });
+      lenis.off("scroll", ScrollTrigger.update());
     };
   });
 
@@ -85,7 +83,6 @@ const App = () => {
           // }`,
           start: "top 10%",
           end: "50% bottom",
-          markers: true,
           pin: true,
           scrub: true,
         },
@@ -101,10 +98,27 @@ const App = () => {
     }
   }, [commentsCardRowRefrence, testimonialRefrence]);
 
-  //   window.scrollTo(0 ,0) = window.outerHeight;
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [timer, setTimer] = React.useState(0);
+  React.useEffect(() => {
+    let loadingInterval;
+    window.addEventListener("load", () => {
+      setIsLoading(true);
+      loadingInterval = setInterval(() => {
+        setTimer((prevTime) => {
+          if (prevTime === 100 && prevTime <= 100) {
+            setIsLoading(false);
+            clearInterval(loadingInterval);
+            return prevTime;
+          }
+          return prevTime + 1;
+        });
+      }, 0);
+    });
+    return () => clearInterval(loadingInterval);
+  }, [timer]);
 
-  // console.log( window.scrollY === window.innerHeight);
-
+  document.body.style.overflow = isLoading ? "hidden" : "auto";
   return (
     <Fragment>
       <main
@@ -113,8 +127,8 @@ const App = () => {
         style={{ transition: "all 0.3s ease-in-out" }}
       >
         <div>
-          {/* <div
-            className={`loading-screen w-[100vw] h-[100vh] fixed bottom-0 hidden flex-col justify-center items-center bg-[#000] z-[1000000] ${
+          <div
+            className={`loading-screen w-[100vw] h-[100vh] fixed bottom-0 flex flex-col justify-center items-center bg-[#000] z-[1000000] ${
               isLoading
                 ? "opacity-100 z-[1000000] top-0 "
                 : "opacity-0 z-[-1] -top-full"
@@ -124,7 +138,7 @@ const App = () => {
             <h1 className={`text-[40vw] text-white font-mono timertext`}>
               {timer}%
             </h1>
-          </div> */}
+          </div>
 
           <div
             className="main_page bg-[#0000004d]  w-full h-[100vh] flex flex-col items-start justify-center gap-8 px-8 xl:px-16"
@@ -276,24 +290,3 @@ const App = () => {
 };
 
 export default App;
-// const [isLoading, setIsLoading] = React.useState(true);
-// const [timer, setTimer] = React.useState(0);
-// React.useEffect(() => {
-//   let loadingInterval;
-//   window.addEventListener("load", () => {
-//     setIsLoading(true);
-//     loadingInterval = setInterval(() => {
-//       setTimer((prevTime) => {
-//         if (prevTime === 100 && prevTime <= 100) {
-//           setIsLoading(false);
-//           clearInterval(loadingInterval);
-//           return prevTime;
-//         }
-//         return prevTime + 1;
-//       });
-//     }, 0);
-//   });
-//   return () => clearInterval(loadingInterval);
-// }, [timer]);
-
-// document.body.style.overflow = isLoading ? "hidden" : "auto";
