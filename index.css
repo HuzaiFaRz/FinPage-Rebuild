@@ -34,12 +34,12 @@ html.lenis body {
   pointer-events: none;
 }
 
-#CommentsCardRow {
-  transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
 * {
   transition: all 0.3s ease-in-out;
+}
+
+#CommentsCardRow {
+  transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 ::-webkit-scrollbar {

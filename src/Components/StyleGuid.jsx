@@ -1,9 +1,17 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import StyleGuideImage from "../assets/Images/StyleGuideImage.svg";
 
 function StyleGuid() {
+  useEffect(() => {
+    if (window.location.href !== "/") {
+      window.scrollTo(0, 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   const textArray = [
     "The rich text element allows you to create and format headings",
     "Headings, paragraphs, blockquotes, figures, images, and figure captions",

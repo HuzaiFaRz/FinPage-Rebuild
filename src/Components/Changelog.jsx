@@ -1,9 +1,17 @@
-import React, { Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
 
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 
 function ChangeLog() {
+  useEffect(() => {
+    if (window.location.href !== "/") {
+      window.scrollTo(0, 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <Fragment>
       <div className="bg-[#000] font-dmsans px-10 sm:px-16 md:px-28 py-28 flex flex-col justify-center items-start gap-10">

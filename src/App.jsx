@@ -80,8 +80,12 @@ const App = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: commentRow,
-          start: `-${commentRow.getBoundingClientRect().top} -${commentRow.getBoundingClientRect().right}`,
-          end: "bottom bottom",
+          // start: `-${commentRow.getBoundingClientRect().top} -${
+          //   commentRow.getBoundingClientRect().right
+          // }`,
+          start: "top 10%",
+          end: "50% bottom",
+          markers: true,
           pin: true,
           scrub: true,
         },
@@ -96,6 +100,10 @@ const App = () => {
       };
     }
   }, [commentsCardRowRefrence, testimonialRefrence]);
+
+  //   window.scrollTo(0 ,0) = window.outerHeight;
+
+  // console.log( window.scrollY === window.innerHeight);
 
   return (
     <Fragment>
@@ -197,7 +205,7 @@ const App = () => {
             </div>
           </div> */}
           <div
-            className="page_five w-full h-full flex flex-col justify-center py-20 items-center bg-[#000]"
+            className="page_five w-full h-full flex flex-col justify-center py-20 px-1 items-center bg-[#000]"
             id="Testimonial"
             ref={testimonialRefrence}
           >

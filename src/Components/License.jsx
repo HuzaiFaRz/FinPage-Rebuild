@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, {useEffect, Fragment } from "react";
 
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
@@ -7,6 +7,14 @@ import LicenseImageOne from "../assets/Images/LicenseImageOne.webp";
 import LicenseImageTwo from "../assets/Images/LicenseImageTwo.png";
 
 function License() {
+  useEffect(() => {
+    if (window.location.href !== "/") {
+      window.scrollTo(0, 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   const LicenseContent = [
     {
       image: LicenseImageOne,
