@@ -6,7 +6,7 @@ import App from "./App";
 import Navbar from "./Components/Navbar";
 import StyleGuid from "./Components/StyleGuid";
 import License from "./Components/License";
-import ChangeLog from "./Components/ChangeLog.jsx";
+import ChangeLog from "./Components/ChangeLog";
 import Error from "./Components/Error";
 
 const router = createBrowserRouter([
