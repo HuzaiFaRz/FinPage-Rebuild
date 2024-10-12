@@ -105,8 +105,6 @@ const App = () => {
           trigger: commentContainer,
           // start: "top top", // Starts when the top of the container reaches the top of the viewport
           // end: () => `+=${commentRow.scrollWidth - commentRow.offsetWidth}`, // Ends when fully scrolled horizontally
-
-          markers: true,
           scrub: 1,
         },
       });
