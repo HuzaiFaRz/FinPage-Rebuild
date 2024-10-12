@@ -39,7 +39,7 @@ html.lenis body {
 }
 
 #CommentsCardRow {
-  transition: all 3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 ::-webkit-scrollbar {

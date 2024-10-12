@@ -84,24 +84,34 @@ const App = () => {
 
   useEffect(() => {
     const commentRow = commentsCardRowRefrence.current;
+    const commentContainer = commentRow.parentElement;
     const testimonialRefrenceElem = testimonialRefrence.current;
 
-    if (commentRow && testimonialRefrenceElem) {
+    if (commentRow && testimonialRefrenceElem && commentContainer) {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: commentRow,
-          // start: `-${commentRow.getBoundingClientRect().top} -${
-          //   commentRow.getBoundingClientRect().right
-          // }`,
-          start: "top 10%",
-          end: "50% bottom",
-          pin: true,
-          scrub: true,
+          // trigger: commentContainer,
+          // // start: `-${commentRow.getBoundingClientRect().top} -${
+          // //   commentRow.getBoundingClientRect().right
+          // // }`,
+          start: "0 20%",
+          end: "0 20%",
+          // // start: "top top",
+          // // end: "bottom bottom",
+          // start: "top 80%", // Adjust this to control when the animation starts
+          // end: "bottom 20%",
+          // markers: true,
+          // scrub: true,
+          trigger: commentContainer,
+          // start: "top top", // Starts when the top of the container reaches the top of the viewport
+          // end: () => `+=${commentRow.scrollWidth - commentRow.offsetWidth}`, // Ends when fully scrolled horizontally
+
+          markers: true,
+          scrub: 1,
         },
       });
-
       tl.to(commentRow, {
-        x: `-${commentRow.getBoundingClientRect().right}`,
+        x: () => -(commentRow.scrollWidth - commentRow.offsetWidth),
       });
 
       return () => {
@@ -140,6 +150,7 @@ const App = () => {
   }, [location.pathname]);
 
   document.body.style.overflow = isLoading ? "hidden" : "auto";
+
   return (
     <Fragment>
       <main
@@ -221,28 +232,8 @@ const App = () => {
             </div>
           </div>
 
-          {/* <div
-            className="page_five w-full flex flex-col justify-between items-center bg-[#000] relative overflow h-[800px]"
-            id="Testimonial"
-            ref={testimonialRefrence}
-          >
-            <SpecialHeading
-              leftText={"Their"}
-              specialText={"words"}
-              centerText={" speak for us."}
-              lineBreak={""}
-            />
-
-            <div
-              ref={commentsCardRowRefrence}
-              id="commentsCardRow"
-              className="flex flex-row items-center justify-start gap-x-6 px-4 w-full absolute top-[20%] h-[600px]"
-            >
-              <CommentsCards />
-            </div>
-          </div> */}
           <div
-            className="page_five w-full h-full flex flex-col justify-center py-20 px-1 items-center bg-[#000]"
+            className="page_five w-full h-full flex flex-col justify-evenly py-20 px-1 items-center bg-[#000]"
             id="Testimonial"
             ref={testimonialRefrence}
           >
@@ -252,12 +243,14 @@ const App = () => {
               centerText={" speak for us."}
               lineBreak={""}
             />
-            <div
-              ref={commentsCardRowRefrence}
-              id="CommentsCardRow"
-              className="flex flex-row items-center justify-start py-10 gap-x-6 px-4 w-full"
-            >
-              <CommentsCards />
+            <div className="overflow-hidden w-full comment-container">
+              <div
+                ref={commentsCardRowRefrence}
+                id="CommentsCardRow"
+                className="flex flex-row items-center justify-start py-10 gap-x-6 px-4 w-full"
+              >
+                <CommentsCards />
+              </div>
             </div>
           </div>
           <div
