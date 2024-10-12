@@ -24,6 +24,7 @@ import Page_Six_Image from "../src/assets/Images/Page_Six_Image.webp";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLocation } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
@@ -111,27 +112,32 @@ const App = () => {
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [timer, setTimer] = React.useState(0);
+  const location = useLocation();
   React.useEffect(() => {
     let loadingInterval;
     const loadingFunctionility = () => {
       setIsLoading(true);
       loadingInterval = setInterval(() => {
         setTimer((prevTime) => {
-          if (prevTime === 100 && prevTime <= 100) {
+          if (prevTime >= 100) {
             setIsLoading(false);
             clearInterval(loadingInterval);
-            return prevTime;
+            return 100;
           }
           return prevTime + 1;
         });
-      }, 0);
+      }, 10);
     };
     window.addEventListener("load", loadingFunctionility);
+    if (location.pathname === "/") {
+      loadingFunctionility();
+      return;
+    }
     return () => {
       clearInterval(loadingInterval);
       window.removeEventListener("load", loadingFunctionility);
     };
-  }, []);
+  }, [location.pathname]);
 
   document.body.style.overflow = isLoading ? "hidden" : "auto";
   return (
@@ -148,7 +154,9 @@ const App = () => {
                 ? "opacity-100 z-[1000000] top-0 "
                 : "opacity-0 z-[-1] -top-full"
             }`}
-            style={{ transition: "all 2.5s cubic-bezier(0.075, 0.82, 0.165, 1)" }}
+            style={{
+              transition: "all 2.5s cubic-bezier(0.075, 0.82, 0.165, 1)",
+            }}
           >
             <h1 className={`text-[40vw] text-white font-mono timertext`}>
               {timer}%
