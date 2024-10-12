@@ -43,8 +43,8 @@ html.lenis body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 12px;
+  width: 5px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {

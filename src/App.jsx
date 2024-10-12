@@ -31,7 +31,7 @@ const App = () => {
   const testimonialRefrence = useRef(null);
 
   useEffect(() => {
-    const lenis = new Lenis({ duration: 0 });
+    const lenis = new Lenis({ duration: 0, infinite: true });
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -102,22 +102,29 @@ const App = () => {
   const [timer, setTimer] = React.useState(0);
   React.useEffect(() => {
     let loadingInterval;
-    window.addEventListener("load", () => {
+    const loadingFunctionility = () => {
       setIsLoading(true);
       loadingInterval = setInterval(() => {
         setTimer((prevTime) => {
-          if (prevTime === 100 && prevTime <= 100) {
+          if (prevTime === 100) {
             setIsLoading(false);
             clearInterval(loadingInterval);
             return prevTime;
           }
           return prevTime + 1;
         });
-      }, 0);
-    });
-    return () => clearInterval(loadingInterval);
-  }, [timer]);
+      }, 50);
 
+      return () => clearInterval(loadingInterval);
+    };
+    window.addEventListener("load", loadingFunctionility);
+    window.addEventListener("popstate", loadingFunctionility);
+    return () => {
+      clearInterval(loadingInterval);
+      window.removeEventListener("load", loadingFunctionility);
+      window.removeEventListener("popstate", loadingFunctionility);
+    };
+  }, [timer]);
   document.body.style.overflow = isLoading ? "hidden" : "auto";
   return (
     <Fragment>
