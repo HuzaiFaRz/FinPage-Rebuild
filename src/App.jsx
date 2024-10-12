@@ -106,25 +106,22 @@ const App = () => {
       setIsLoading(true);
       loadingInterval = setInterval(() => {
         setTimer((prevTime) => {
-          if (prevTime === 100) {
+          if (prevTime === 100 && prevTime <= 100) {
             setIsLoading(false);
             clearInterval(loadingInterval);
             return prevTime;
           }
           return prevTime + 1;
         });
-      }, 50);
-
-      return () => clearInterval(loadingInterval);
+      }, 10);
     };
     window.addEventListener("load", loadingFunctionility);
-    window.addEventListener("popstate", loadingFunctionility);
     return () => {
       clearInterval(loadingInterval);
       window.removeEventListener("load", loadingFunctionility);
-      window.removeEventListener("popstate", loadingFunctionility);
     };
-  }, [timer]);
+  }, []);
+
   document.body.style.overflow = isLoading ? "hidden" : "auto";
   return (
     <Fragment>
