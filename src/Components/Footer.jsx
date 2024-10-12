@@ -18,7 +18,11 @@ function Footer() {
     "FAQ",
     "Downlaod",
   ];
-  const footerLinksArray2 = ["StyleGuide", "License", "Changelog"];
+  const footerLinksArray2 = [
+    { footerlink: "StyleGuide", footerHref: "styleguide" },
+    { footerlink: "License", footerHref: "license" },
+    { footerlink: "ChangeLog", footerHref: "changelog" },
+  ];
   return (
     <Fragment>
       <footer className="bg-[#000] cursor-pointer py-5 font-dmsans">
@@ -67,8 +71,8 @@ function Footer() {
                     className="Footer_Li  text-lg tracking-tight mt-0 px-2 py-2 text-[#ffffffb3] hover:text-[#ffffff]"
                     key={index}
                   >
-                    <Link to={`${element}`} id="link">
-                      {element}
+                    <Link to={`${element.footerHref}`} id="link">
+                      {element.footerlink}
                     </Link>
                   </li>
                 );
