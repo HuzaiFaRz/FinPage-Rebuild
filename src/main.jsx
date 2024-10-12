@@ -6,7 +6,7 @@ import App from "./App";
 import Navbar from "./Components/Navbar";
 import StyleGuid from "./Components/StyleGuid";
 import License from "./Components/License";
-import ChangeLog from "./Components/ChangeLog";
+import Changelog from "./Components/Changelog";
 import Error from "./Components/Error";
 
 const router = createBrowserRouter([
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "changelog",
-        element: <ChangeLog />,
+        element: <Changelog />,
       },
     ],
   },

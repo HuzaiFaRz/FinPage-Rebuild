@@ -3,7 +3,7 @@ import React, { useEffect, Fragment } from "react";
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 
-function ChangeLog() {
+function Changelog() {
   useEffect(() => {
     if (window.location.href !== "/") {
       window.scrollTo(0, 0);
@@ -24,4 +24,4 @@ function ChangeLog() {
   );
 }
 
-export default ChangeLog;
+export default Changelog;
