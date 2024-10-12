@@ -148,7 +148,7 @@ const App = () => {
                 ? "opacity-100 z-[1000000] top-0 "
                 : "opacity-0 z-[-1] -top-full"
             }`}
-            style={{ transition: "all 3s linear" }}
+            style={{ transition: "all 2.5s cubic-bezier(0.075, 0.82, 0.165, 1)" }}
           >
             <h1 className={`text-[40vw] text-white font-mono timertext`}>
               {timer}%
