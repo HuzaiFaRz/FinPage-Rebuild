@@ -33,13 +33,8 @@ const App = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      orientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1,
       smoothTouch: true,
-      touchMultiplier: 2,
-      direction: "horizontal",
-      smooth: true,
       gestureDirection: "both",
       duration: 0,
       infinite: true,
