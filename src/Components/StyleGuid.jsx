@@ -19,7 +19,7 @@ function StyleGuid() {
   ];
   return (
     <Fragment>
-      <div className="bg-[#000] font-dmsans px-10 sm:px-16 py-8 flex flex-col justify-center items-start gap-10">
+      <div className="bg-[#000] font-dmsans px-10 sm:px-16 pt-28  py-8 flex flex-col justify-center items-start gap-10">
         <Heading text="Style Guide" />
         <Paragraph text="Here are the styles and components used through the site. You can make global site changes when you change styles on this page." />
 

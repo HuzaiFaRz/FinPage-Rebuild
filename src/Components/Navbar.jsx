@@ -32,7 +32,7 @@ function Navbar() {
             <Link to={"/"}>
               <img
                 src={Navbar_Logo}
-                className="Navbar_Logo w-36 md:w-40 lg:w-full"
+                className="Navbar_Logo w-52 md:w-60 lg:w-full"
               />
             </Link>
           </div>

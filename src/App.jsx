@@ -240,6 +240,9 @@ const App = () => {
               <div
                 ref={commentsCardRowRefrence}
                 id="CommentsCardRow"
+                style={{
+                  transition: "all 2.5s cubic-bezier(0.075, 0.82, 0.165, 1)",
+                }}
                 className="flex flex-row items-center justify-start py-10 gap-x-6 px-4 w-full"
               >
                 <CommentsCards />
@@ -255,7 +258,10 @@ const App = () => {
               className="object-center object-cover w-[60px] h-[60px] mb-5"
             />
             <Heading text={"FAQs"} />
-            <div className="flex flex-col justify-center items-center gap-5 w-full py-5 px-10">
+            <div
+        
+              className="flex flex-col justify-center items-center gap-5 w-full py-5 px-10"
+            >
               <FAQsItems />
             </div>
           </div>

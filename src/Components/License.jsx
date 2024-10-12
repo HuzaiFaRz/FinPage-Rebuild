@@ -31,7 +31,7 @@ function License() {
   ];
   return (
     <Fragment>
-      <div className="bg-[#000] font-dmsans px-10 sm:px-16 py-8 flex flex-col justify-center items-start gap-10">
+      <div className="bg-[#000] font-dmsans px-10 sm:px-16 pt-28  py-8 flex flex-col justify-center items-start gap-10">
         <Heading text="Licences" />
         <Paragraph text="All graphical assets in this template are licensed for personal and commercial use. If you'd like to use a specific asset, please check the license below" />
         {LicenseContent.map((element, index) => {

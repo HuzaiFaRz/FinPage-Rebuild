@@ -49,6 +49,9 @@ function FAQsItems() {
           <Fragment key={index}>
             <div
               className="Faqs-Item w-full lg:w-[850px] cursor-pointer flex flex-col justify-center items-start py-8 border border-[#000] border-b-[#ffffff33]"
+              style={{
+                transition: "all 0.3s ease-in-out",
+              }}
               key={index}
               onClick={() => {
                 toggleFAQ(index);
@@ -64,6 +67,9 @@ function FAQsItems() {
                     ${visibleFAQ[index] ? "bg-[#fff]" : "bg-[#ffffff33]"}`}
                   >
                     <span
+                      style={{
+                        transition: "0.3s ease-in-out",
+                      }}
                       className={`w-[60%] h-[2px] ${
                         visibleFAQ[index]
                           ? "absolute left-[15px] -translate-x-[5px] rotate-45 bg-[#000]"
@@ -72,6 +78,9 @@ function FAQsItems() {
                     ></span>
 
                     <span
+                      style={{
+                        transition: "0.3s ease-in-out",
+                      }}
                       className={`w-[60%] h-[2px]
                         
                         ${
@@ -84,6 +93,9 @@ function FAQsItems() {
                 </div>
               </div>
               <p
+                style={{
+                  transition: "0.3s ease-in-out",
+                }}
                 className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%]
                 ${
                   visibleFAQ[index]
