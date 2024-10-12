@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Navbar_Logo from "../assets/Images/Navbar_Logo.svg";
 import Navbar_Arrow from "../assets/Images/Navbar_Arrow.svg";
 import Footer from "./Footer";
@@ -29,12 +29,12 @@ function Navbar() {
           {/* Navbar Start */}
 
           <div className="Navbar_Start_Content">
-            <a href="/">
+            <Link to={"/"}>
               <img
                 src={Navbar_Logo}
                 className="Navbar_Logo w-36 md:w-40 lg:w-full"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Navbar Center */}

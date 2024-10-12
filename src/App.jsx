@@ -31,7 +31,18 @@ const App = () => {
   const testimonialRefrence = useRef(null);
 
   useEffect(() => {
-    const lenis = new Lenis({ duration: 0, infinite: true });
+    const lenis = new Lenis({
+      // orientation: "horizontal",
+      // smoothWheel: true,
+      // wheelMultiplier: 1,
+      // smoothTouch: true,
+      // touchMultiplier: 2,
+      // direction: "horizontal",
+      // smooth: true,
+      // gestureDirection: "both"
+      duration: 0,
+      infinite: true,
+    });
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -45,7 +56,7 @@ const App = () => {
       const anchorHref = e.currentTarget.getAttribute("href");
       if (anchorHref !== "#") {
         lenis.scrollTo(anchorHref, {
-          duration: 11.2,
+          duration: 3,
           immediate: false,
           onComplete() {
             const scrollTriggers = ScrollTrigger.getAll();
@@ -113,7 +124,7 @@ const App = () => {
           }
           return prevTime + 1;
         });
-      }, 10);
+      }, 0);
     };
     window.addEventListener("load", loadingFunctionility);
     return () => {
