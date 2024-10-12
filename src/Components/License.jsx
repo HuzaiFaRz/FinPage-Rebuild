@@ -1,4 +1,4 @@
-import React, {useEffect, Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
 
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
@@ -31,7 +31,7 @@ function License() {
   ];
   return (
     <Fragment>
-      <div className="bg-[#000] font-dmsans px-10 sm:px-16 md:px-28 py-28 flex flex-col justify-center items-start gap-10">
+      <div className="bg-[#000] font-dmsans px-10 sm:px-16 py-8 flex flex-col justify-center items-start gap-10">
         <Heading text="Licences" />
         <Paragraph text="All graphical assets in this template are licensed for personal and commercial use. If you'd like to use a specific asset, please check the license below" />
         {LicenseContent.map((element, index) => {
@@ -42,7 +42,7 @@ function License() {
                   src={element.image}
                   className="w-full lg:w-[50%] h-full flex justify-center"
                 />
-                <div>
+                <div className="flex flex-col justify-start items-center gap-5">
                   <h1 className="text-4xl font-sora w-full text-white font-light tracking-tighter">
                     {element.heading}
                   </h1>

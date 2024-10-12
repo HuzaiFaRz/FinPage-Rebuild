@@ -19,7 +19,7 @@ function StyleGuid() {
   ];
   return (
     <Fragment>
-      <div className="bg-[#000] font-dmsans px-16  md:px-28 py-28 flex flex-col justify-center items-start gap-10">
+      <div className="bg-[#000] font-dmsans px-10 sm:px-16 py-8 flex flex-col justify-center items-start gap-10">
         <Heading text="Style Guide" />
         <Paragraph text="Here are the styles and components used through the site. You can make global site changes when you change styles on this page." />
 
@@ -29,11 +29,11 @@ function StyleGuid() {
         />
         <Heading text="How to customize formatting for each rich text" />
         <Paragraph text="Headings, paragraphs, blockquotes, figures, images, and figure captions can all be styled after a class is added to the rich text element using the When inside of nested selector system." />
-        <ul className="flex flex-col justify-start items-center list-decimal gap-4 px-5">
+        <ul className="flex flex-col justify-start items-center list-decimal gap-6 px-5">
           {textArray.map((element, index) => {
             return (
               <Fragment key={index}>
-                <li className="w-full text-[#fff] text-lg font-sora">
+                <li className="w-full text-[#fff] text[13px] sm:text-lg font-sora">
                   {element}
                 </li>
               </Fragment>
