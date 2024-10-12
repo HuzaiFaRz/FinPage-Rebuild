@@ -35,11 +35,11 @@ html.lenis body {
 }
 
 * {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.32s ease-in-out;
 }
 
 #CommentsCardRow {
-  transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 ::-webkit-scrollbar {
