@@ -97,29 +97,27 @@ function Navbar() {
             </a>
 
             <div
-              className="w-[64px] h-[64px] flex flex-col bg-[#fff] rounded-full justify-center items-center absolute top-1/2 -translate-y-1/2 bg-red"
+              className="w-[64px] h-[64px] absolute top-1/2 -translate-y-1/2 mt-4 md:mt-5 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
               onClick={() => {
                 NavbrOpenFunctionility();
               }}
             >
-              <div className="w-full h-full scale-50 sm:scale-75 lg:scale-0 relative mt-4 md:mt-5 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden">
-                <span
-                  className={`${`origin-left block absolute h-[5px] bg-[#000] rounded-[9px] opacity-100 transition-all ease-in-out duration-300`}
+              <span
+                className={`${`origin-left block absolute h-[3px] top-1/2 -translate-y-1/2  bg-[#fff] rounded-[9px] opacity-100 transition-all ease-in-out duration-300`}
                   ${
                     navbarOpen
                       ? "transform rotate-45 top-[-3px] left-[8px] w-full"
                       : "transform rotate-0  top-0 right-0 w-2/4"
                   }`}
-                ></span>
+              ></span>
 
-                <span
-                  className={`${`origin-left block absolute  bg-[#000] h-[5px] w-full rounded-[9px] opacity-100 left-0 transition-all ease-in-out duration-300`}${
-                    navbarOpen
-                      ? "transform -rotate-45 top-[39px] left-[8px]"
-                      : "transform rotate-0 top-[15px] left-0"
-                  }`}
-                ></span>
-              </div>
+              <span
+                className={`${`origin-left block absolute top-1/2 -translate-y-1/2  bg-[#fff] h-[3px] w-full rounded-[9px] opacity-100 left-0 transition-all ease-in-out duration-300`}${
+                  navbarOpen
+                    ? "transform -rotate-45 top-[39px] left-[8px]"
+                    : "transform rotate-0 top-[15px] left-0"
+                }`}
+              ></span>
             </div>
           </div>
         </nav>
