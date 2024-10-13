@@ -45,10 +45,9 @@ function FAQsItems() {
     <Fragment>
       {faqsItemsContent.map((element, index) => {
         return (
-          <Fragment key={index}>
+          <React.Fragment key={index}>
             <div
               className="Faqs-Item w-full lg:w-[850px] cursor-pointer flex flex-col justify-center items-start py-8 border border-[#000] border-b-[#ffffff33]"
-              key={index}
               onClick={() => {
                 toggleFAQ(index);
               }}
@@ -82,7 +81,13 @@ function FAQsItems() {
                   </div>
                 </div>
               </div>
-              <p
+              {visibleFAQ[index] && (
+                <p className="Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%] py-5 transition-all">
+                  {element.detail}
+                </p>
+              )}
+
+              {/* <p
                 className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%] py-5 overflow-y-scroll
                 ${
                   visibleFAQ[index]
@@ -91,9 +96,9 @@ function FAQsItems() {
                 }`}
               >
                 {element.detail}
-              </p>
+              </p> */}
             </div>
-          </Fragment>
+          </React.Fragment>
         );
       })}
     </Fragment>
