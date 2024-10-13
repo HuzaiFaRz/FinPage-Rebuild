@@ -49,7 +49,7 @@ function FAQsItems() {
         return (
           <Fragment key={index}>
             <div
-              className="Faqs-Item w-full transition-[height] lg:w-[850px] cursor-pointer flex flex-col justify-center items-start py-8 border border-[#000] border-b-[#ffffff33]"
+              className="Faqs-Item w-full lg:w-[850px] cursor-pointer flex flex-col justify-center items-start py-8 border border-[#000] border-b-[#ffffff33]"
               key={index}
               onClick={() => {
                 toggleFAQ(index);
@@ -85,11 +85,11 @@ function FAQsItems() {
                 </div>
               </div>
               <p
-                className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%] py-5
+                className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%]
                 ${
                   visibleFAQ[index]
-                    ? "opacity-1 max-h-[200px]"
-                    : "opacity-0 max-h-[0px]"
+                    ? "opacity-1 max-h-[200px] py-5"
+                    : "opacity-0 max-h-[0px] py-0"
                 }`}
               >
                 {element.detail}
