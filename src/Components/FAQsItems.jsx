@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 
-import "../Components/FaqItems.css";
-
 function FAQsItems() {
   const faqsItemsContent = [
     {
@@ -85,11 +83,11 @@ function FAQsItems() {
                 </div>
               </div>
               <p
-                className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%]
+                className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%] py-5 overflow-y-scroll
                 ${
                   visibleFAQ[index]
-                    ? "opacity-1 max-h-[200px] py-5"
-                    : "opacity-0 max-h-[0px] py-0"
+                    ? "opacity-1 max-h-[200px]"
+                    : "opacity-0 max-h-[0px]"
                 }`}
               >
                 {element.detail}

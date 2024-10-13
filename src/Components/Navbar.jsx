@@ -98,7 +98,7 @@ function Navbar() {
             </a>
 
             <div
-              className="w-[64px] h-[64px] scale-50 sm:scale-75 lg:scale-100  bg-red-500 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
+              className="w-[64px] h-[64px] scale-50 sm:scale-75 lg:scale-100 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
               onClick={() => {
                 NavbrOpenFunctionility();
               }}
