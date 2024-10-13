@@ -85,7 +85,7 @@ function FAQsItems() {
                 </div>
               </div>
               <p
-                className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%] transition-all duration-500 ease-in-out
+                className={`Faqs-Detail text-start text-[#ffffffb3] text-xl font-dmsans mt-8 w-full sm:w-[90%] py-5
                 ${
                   visibleFAQ[index]
                     ? "opacity-1 max-h-[200px]"

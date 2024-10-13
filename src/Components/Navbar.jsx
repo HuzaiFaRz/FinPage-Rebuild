@@ -12,6 +12,7 @@ function Navbar() {
 
   const NavbrOpenFunctionility = () => {
     setNavbarOpen(!navbarOpen);
+    console.log(this);
   };
 
   const navbarDefaultClass = `OffCanvas_Links_Ul w-[100vw] flex flex-col justify-start items-start gap-2 md:gap-5 absolute left-1/2 top-24 border-none bg-[#000]
@@ -97,7 +98,7 @@ function Navbar() {
             </a>
 
             <div
-              className="w-[64px] h-[64px] absolute top-1/2 -translate-y-1/2 mt-4 md:mt-5 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
+              className="w-[64px] h-[64px] scale-50 sm:scale-75 lg:scale-100  bg-red-500 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
               onClick={() => {
                 NavbrOpenFunctionility();
               }}
