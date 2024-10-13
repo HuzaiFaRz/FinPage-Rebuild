@@ -12,7 +12,6 @@ function Navbar() {
 
   const NavbrOpenFunctionility = () => {
     setNavbarOpen(!navbarOpen);
-    console.log(this);
   };
 
   const navbarDefaultClass = `OffCanvas_Links_Ul w-[100vw] flex flex-col justify-start items-start gap-2 md:gap-5 absolute left-1/2 top-24 border-none bg-[#000]
