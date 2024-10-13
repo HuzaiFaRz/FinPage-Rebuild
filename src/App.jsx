@@ -236,13 +236,11 @@ const App = () => {
               centerText={" speak for us."}
               lineBreak={""}
             />
-            <div className="overflow-hidden w-full comment-container">
+            <div className="overflow-hidden w-full comment-container ">
               <div
                 ref={commentsCardRowRefrence}
                 id="CommentsCardRow"
-                style={{
-                  transition: "all 2.5s cubic-bezier(0.075, 0.82, 0.165, 1)",
-                }}
+         
                 className="flex flex-row items-center justify-start py-10 gap-x-6 px-4 w-full"
               >
                 <CommentsCards />

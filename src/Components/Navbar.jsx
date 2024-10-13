@@ -97,7 +97,7 @@ function Navbar() {
             </a>
 
             <div
-              className="w-[4rem] h-[4rem] flex flex-col justify-center items-center"
+              className="w-[4rem] h-[4rem] flex flex-col justify-center items-center absolute top-1/2 -translate-y-1/2 bg-red"
               onClick={() => {
                 NavbrOpenFunctionility();
               }}
