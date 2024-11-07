@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar_Logo from "../assets/Images/Navbar_Logo.svg";
 import Navbar_Arrow from "../assets/Images/Navbar_Arrow.svg";
-import Footer from "./Footer";
 
 export { Navbar_Logo };
 const linksArray = ["Overview", "Features", "Testimonial", "FAQ", "Downlaod"];
@@ -121,8 +120,6 @@ function Navbar() {
             </div>
           </div>
         </nav>
-        <Outlet />
-        <Footer />
       </main>
     </Fragment>
   );
