@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar_Logo from "../assets/Images/Navbar_Logo.svg";
 import Navbar_Arrow from "../assets/Images/Navbar_Arrow.svg";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { Navbar_Logo };
 const linksArray = ["Overview", "Features", "Testimonial", "FAQ", "Downlaod"];
 
@@ -13,9 +14,7 @@ function Navbar() {
     setNavbarOpen(!navbarOpen);
   };
 
-  const navbarDefaultClass = `OffCanvas_Links_Ul w-[100vw] flex flex-col justify-start items-start gap-2 md:gap-5 absolute left-1/2 top-24 border-none bg-[#000]
-   lg:Navbar_Links_Ul lg:flex lg:flex-row lg:justify-center lg:w-auto lg:h-auto lg:py-2 lg:px-12 lg:bg-[#ffffff33]  lg:backdrop-blur-xl lg:rounded-3xl
-    border lg:border-[#ffffff33] lg:fixed lg:start-1/2 -translate-x-2/4 lg:top-8`;
+  const navbarDefaultClass = `OffCanvas_Links_Ul w-[100vw] flex flex-col justify-start items-start gap-2 md:gap-5 absolute left-1/2 top-24 border-none bg-[#000] lg:Navbar_Links_Ul lg:flex lg:flex-row lg:justify-center lg:w-auto lg:h-auto lg:py-2 lg:px-12 lg:bg-[#ffffff33]  lg:backdrop-blur-xl lg:rounded-3xl border lg:border-[#ffffff33] lg:fixed lg:start-1/2 -translate-x-2/4 lg:top-8`;
 
   return (
     <Fragment>
@@ -94,7 +93,6 @@ function Navbar() {
               <h5 className="text-white text-base">Buy Template</h5>
               <img src={Navbar_Arrow} className="Navbar_Arrow" />
             </a>
-
             <div
               className="w-[64px] h-[64px] scale-50 sm:scale-75 lg:scale-100 transform rotate-0 transition-all ease-in-out duration-300 lg:hidden"
               onClick={() => {
