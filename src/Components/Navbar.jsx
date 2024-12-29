@@ -74,6 +74,9 @@ function Navbar() {
                     id="link"
                     href={`#${element}`}
                     className="Offcanvas_Li px-2 py-2"
+                    onClick={() => {
+                      setNavbarOpen(!navbarOpen);
+                    }}
                   >
                     {element}
                   </a>
