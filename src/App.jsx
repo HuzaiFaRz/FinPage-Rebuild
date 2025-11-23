@@ -89,7 +89,8 @@ const App = () => {
           // // start: `-${commentRow.getBoundingClientRect().top} -${
           // //   commentRow.getBoundingClientRect().right
           // // }`,
-          start: "0 20%",
+          start: "top 20%",
+          // markers:true,
           end: "0 20%",
           // // start: "top top",
           // // end: "bottom bottom",

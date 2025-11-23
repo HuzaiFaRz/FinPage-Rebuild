@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 
 function CommentsCards() {
   const commentsCardsContent = [
@@ -39,7 +39,6 @@ function CommentsCards() {
         return (
           <div
             className="min-w-[18rem] p-8 md:min-w-[20rem] md:p-10 lg:min-w-[25rem] lg:p-14 font-sora font-normal flex flex-col justify-between items-start rounded-3xl bg-gradient-to-br from-[#0100e3] via-[#1b9feb] to-[#8736f3]"
-          //  ref={refrence}
             key={index}
           >
             <p className="w-full text-2xl lg:text-3xl  mb-28  text-white">
