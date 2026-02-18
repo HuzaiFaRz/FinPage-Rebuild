@@ -89,9 +89,9 @@ const App = () => {
           // // start: `-${commentRow.getBoundingClientRect().top} -${
           // //   commentRow.getBoundingClientRect().right
           // // }`,
-          start: "top 20%",
+          start: "top 11%",
           // markers:true,
-          end: "0 20%",
+          end: "0 11%",
           // // start: "top top",
           // // end: "bottom bottom",
           // start: "top 80%", // Adjust this to control when the animation starts
