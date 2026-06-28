@@ -45,7 +45,6 @@ function CommentsCards() {
               {element.testimonialText}
             </p>
             <span className="w-full text text-xl text-white font-sora">
-              {" "}
               {element.writerName}
             </span>
           </div>

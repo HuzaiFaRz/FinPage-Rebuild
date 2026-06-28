@@ -85,23 +85,10 @@ const App = () => {
     if (commentRow && testimonialRefrenceElem && commentContainer) {
       const tl = gsap.timeline({
         scrollTrigger: {
-          // trigger: commentContainer,
-          // // start: `-${commentRow.getBoundingClientRect().top} -${
-          // //   commentRow.getBoundingClientRect().right
-          // // }`,
           start: "top 11%",
-          // markers:true,
           end: "0 11%",
-          // // start: "top top",
-          // // end: "bottom bottom",
-          // start: "top 80%", // Adjust this to control when the animation starts
-          // end: "bottom 20%",
-          // markers: true,
-          // scrub: true,
           trigger: commentContainer,
-          // start: "top top", // Starts when the top of the container reaches the top of the viewport
-          // end: () => `+=${commentRow.scrollWidth - commentRow.offsetWidth}`, // Ends when fully scrolled horizontally
-          scrub: 1,
+          scrub: 4,
         },
       });
       tl.to(commentRow, {
